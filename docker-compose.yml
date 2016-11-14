@@ -1,0 +1,12 @@
+version: '2'
+services:
+  master:
+    image: pingpong:1.0.0-SNAPSHOT
+    ports:
+      - "5150"
+    environment:
+      MASTER: "true"
+  slave:
+    image: pingpong:1.0.0-SNAPSHOT
+    links:
+      - master
